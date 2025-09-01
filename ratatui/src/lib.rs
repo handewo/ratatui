@@ -486,6 +486,8 @@ pub use ratatui_macros as macros;
 /// re-export the `termina` crate so that users don't have to add it as a dependency
 #[cfg(feature = "termina")]
 pub use ratatui_termina::termina;
+#[cfg(all(feature = "no-tty", not(feature = "crossterm")))]
+pub use ratatui_notty::crossterm;
 /// re-export the `termion` crate so that users don't have to add it as a dependency
 #[cfg(all(not(windows), feature = "termion"))]
 pub use ratatui_termion::termion;
@@ -507,6 +509,8 @@ pub mod backend {
     pub use ratatui_crossterm::{CrosstermBackend, FromCrossterm, IntoCrossterm};
     #[cfg(feature = "termina")]
     pub use ratatui_termina::{FromTermina, IntoTermina, TerminaBackend};
+    #[cfg(all(feature = "no-tty", not(feature = "crossterm")))]
+    pub use ratatui_notty::{FromNotty, IntoNotty, NottyBackend};
     #[cfg(all(not(windows), feature = "termion"))]
     pub use ratatui_termion::{FromTermion, IntoTermion, TermionBackend};
     #[cfg(feature = "termwiz")]

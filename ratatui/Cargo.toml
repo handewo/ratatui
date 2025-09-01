@@ -26,7 +26,13 @@ rustdoc-args = ["--cfg", "docsrs"]
 ## as it is supported on Linux/Mac/Windows systems. We also enable the `underline-color` feature
 ## which allows you to set the underline color of text, the `macros` feature which provides
 ## some useful macros and `layout-cache` which speeds up layout cache calculations.
-default = ["all-widgets", "crossterm", "layout-cache", "macros", "underline-color"]
+default = [
+  "all-widgets",
+  "crossterm",
+  "layout-cache",
+  "macros",
+  "underline-color",
+]
 #! Generally an application will only use one backend, so you should only enable one of the following features:
 ## enables the [`CrosstermBackend`](backend::CrosstermBackend) backend and adds a dependency on [`crossterm`].
 crossterm = ["dep:ratatui-crossterm", "std"]
@@ -41,6 +47,7 @@ termina = ["dep:ratatui-termina", "std"]
 ## enables the [`TermwizBackend`](backend::TermwizBackend) backend and adds a dependency on [`termwiz`].
 termwiz = ["dep:ratatui-termwiz", "std"]
 
+no-tty = ["std", "dep:ratatui-notty"]
 ## enables std
 std = ["ratatui-core/std", "ratatui-widgets/std", "serde?/std"]
 
@@ -103,7 +110,11 @@ underline-color = [
 #! The following features are unstable and may change in the future:
 
 ## Enable all unstable features.
-unstable = ["unstable-backend-writer", "unstable-rendered-line-info", "unstable-widget-ref"]
+unstable = [
+  "unstable-backend-writer",
+  "unstable-rendered-line-info",
+  "unstable-widget-ref",
+]
 
 ## Enables the [`Paragraph::line_count`](widgets::Paragraph::line_count)
 ## [`Paragraph::line_width`](widgets::Paragraph::line_width) methods
@@ -133,6 +144,7 @@ ratatui-core = { workspace = true }
 ratatui-crossterm = { workspace = true, optional = true }
 ratatui-macros = { workspace = true, optional = true }
 ratatui-termina = { workspace = true, optional = true }
+ratatui-notty = { workspace = true, optional = true }
 ratatui-termwiz = { workspace = true, optional = true }
 ratatui-widgets = { workspace = true }
 serde = { workspace = true, optional = true }

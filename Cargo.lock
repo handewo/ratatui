@@ -1783,13 +1783,8 @@ name = "inline"
 version = "0.0.0"
 dependencies = [
  "color-eyre",
-<<<<<<< HEAD
  "crossterm 0.29.0",
  "rand 0.10.1",
-=======
- "crossterm 0.29.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "rand 0.9.2",
->>>>>>> 5f62ea2e (New Feature:)
  "ratatui",
 ]
 
@@ -2866,11 +2861,8 @@ dependencies = [
  "ratatui-core",
  "ratatui-crossterm",
  "ratatui-macros",
-<<<<<<< HEAD
  "ratatui-termina",
-=======
  "ratatui-notty",
->>>>>>> 5f62ea2e (New Feature:)
  "ratatui-termion",
  "ratatui-termwiz",
  "ratatui-widgets",
@@ -4488,13 +4480,8 @@ name = "weather"
 version = "0.0.0"
 dependencies = [
  "color-eyre",
-<<<<<<< HEAD
  "crossterm 0.29.0",
  "rand 0.10.1",
-=======
- "crossterm 0.29.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "rand 0.9.2",
->>>>>>> 5f62ea2e (New Feature:)
  "ratatui",
 ]
 
